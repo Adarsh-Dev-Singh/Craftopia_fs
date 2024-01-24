@@ -1,0 +1,51 @@
+{
+  "status": "ok",
+  "Arts": [
+    {
+      "id": 1,
+      "title": "Beach Scenery",
+      "description": "The ocean stirs the heart, inspires the imagination and brings eternal joy to the soul.",
+      "urlToImage": "https://th.bing.com/th/id/OIP.a06jym5wuSrJms8ULwwNWwHaEo?rs=1&pid=ImgDetMain",
+       "price":"3069"
+       
+
+    },
+  {
+    "id": 2,
+    "title": "Mountain View",
+    "description": "Experience the breathtaking beauty of towering mountains and serene landscapes.",
+    "urlToImage": "https://th.bing.com/th/id/OIP.LGEFHGoVgmZ8z1uB4wf8JwHaFE?w=295&h=201&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "price": "4769"
+  },
+  {
+    "id": 3,
+    "title": "Sunset Reflection",
+    "description": "A mesmerizing sunset reflecting on calm waters, creating a picturesque scene.",
+    "urlToImage": "https://th.bing.com/th/id/OIP.xvID4sUeCaDRa0HVb3kQ2AHaFk?w=241&h=181&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "price": "5369"
+  },
+  {
+    "id": 4,
+    "title": "Forest Adventure",
+    "description": "Explore the enchanting beauty of dense forests and discover hidden wonders.",
+    "urlToImage": "https://th.bing.com/th/id/OIP.meNIyyuoDtYTvpA8e_gGRgHaEK?w=318&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "price": "4069"
+  },
+  {
+    "id": 5,
+    "title": "City Lights",
+    "description": "Experience the vibrant energy of city lights and urban landscapes.",
+    "urlToImage": "https://th.bing.com/th/id/OIP.98qPLB652zG9etkK-B8g_QHaEK?w=320&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "price": "5969"
+  },
+  {
+    "id": 6,
+    "title": "Mystical Mountains",
+    "description": "Embark on a journey through mystical mountains, where beauty meets tranquility.",
+    "urlToImage": "https://th.bing.com/th/id/OIP.8Cu6OYavow3qsvMI_Dp-vgHaFi?w=227&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "price": "5569"
+  }
+  
+  
+  ]
+}
