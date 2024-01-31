@@ -54,7 +54,7 @@ const Navbar = () => {
           </a>
           <li>
             <a
-              href="#"
+              href="/musics"
               className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
             >
               Music
@@ -62,7 +62,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/potteries"
               className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
             >
               Pottery

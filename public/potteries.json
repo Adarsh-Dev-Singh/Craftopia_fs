@@ -1,0 +1,47 @@
+{
+  "status": "ok",
+  "Pottery": [
+    {
+      "id": 1,
+      "title": "Earthen Elegance",
+      "description": "Crafted with precision, this pottery piece embodies the beauty of earthenware with intricate designs.",
+      "urlToImage": "https://th.bing.com/th/id/OIP.iUqjx6DTqjBanRflUMh83wHaLG?w=137&h=206&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "price": "869"
+    },
+    {
+      "id": 2,
+      "title": "Rustic Charm",
+      "description": "Experience the rustic allure of handmade pottery, showcasing unique textures and earthy tones.",
+      "urlToImage": "https://th.bing.com/th/id/OIP.zDQP1_ERSK3zWyPElAEknAHaJ4?w=126&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "price": "1269"
+    },
+    {
+      "id": 3,
+      "title": "Artisan's Touch",
+      "description": "A testament to the artisan's skill, this pottery piece reflects the beauty of handcrafted ceramics.",
+      "urlToImage": "https://th.bing.com/th/id/OIP.gRFJo8my2SX9JQE6Q6J-0AHaFA?w=284&h=193&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "price": "969"
+    },
+    {
+      "id": 4,
+      "title": "Majestic Mugs Set",
+      "description": "Elevate your dining experience with this set of majestic mugs, each a unique piece of functional art.",
+      "urlToImage": "https://th.bing.com/th/id/OIP.qoklnoXthMelMMj0Yvx7QAAAAA?w=193&h=194&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "price": "1469"
+    },
+    {
+      "id": 5,
+      "title": "Whimsical Vases Collection",
+      "description": "Adorn your space with whimsy using this collection of hand-painted pottery vases, each telling a story.",
+      "urlToImage": "https://th.bing.com/th/id/OIP.MSmzoX6RWY5EgeikTqYQOgHaH2?rs=1&pid=ImgDetMain",
+      "price": "1069"
+    },
+    {
+      "id": 6,
+      "title": "Serene Tea Set",
+      "description": "Sip in style with this serene tea set, combining functionality with the elegance of finely crafted pottery.",
+      "urlToImage": "https://th.bing.com/th/id/OIP.KCTuPsuwERPbA7oI2hlgyAHaFj?w=246&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "price": "1569"
+    }
+  ]
+}
