@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5"
 import { FaCartArrowDown } from "react-icons/fa"
 import { Power1, Power3, gsap } from "gsap";
 import { useLayoutEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
 
   const app = useRef(null);
@@ -29,44 +30,44 @@ const Navbar = () => {
     <nav className="bg-gray-300" ref={app}>
       <div className="flex items-center justify-between lg:mx-10 p-4" id="one">
         {/* Logo Name */}
-        <a href="/" className="flex items-center gap-5">
+        <Link href="/" className="flex items-center gap-5">
           <img src='https://th.bing.com/th/id/OIP.Vy5PUdCk1nZpeE31MCa1pwHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7' className="h-10 w-10 md:h-16 md:w-16" alt="Craftopia Logo" />
           <span className="self-center lg:text-3xl font-bold border-b-4 border-red-600 p-1 font-[Lemon]">
             Craftopia
           </span>
-        </a>
+        </Link>
 
         {/* Nav Menu List */}
         <ul className="hidden md:flex p-2 font-bold lg:text-xl">
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
               className="block px-3 text-gray-900 hover:bg-transparent hover:text-blue-700 font-[Salsa]"
             >
               Home
-            </a>
+            </Link>
           </li>
-          <a
-            href="/arts"
+          <Link
+            to="/arts"
             className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
           >
             Art
-          </a>
+          </Link>
           <li>
-            <a
-              href="/musics"
+            <Link
+              to="/musics"
               className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
             >
               Music
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/potteries"
+            <Link
+              to="/potteries"
               className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
             >
               Pottery
-            </a>
+            </Link>
           </li>
         </ul>
 

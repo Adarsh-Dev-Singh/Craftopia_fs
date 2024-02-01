@@ -10,6 +10,7 @@ import PotteryFullDetails from './Components/PotteryFullDetails';
 import './output.css';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import Home from './Components/Home';
 
 const App = () => {
   const [arts, setArts] = useState([]);
@@ -55,6 +56,7 @@ const App = () => {
     <Navbar/>
    <Routes>
       <Route />
+      <Route path="/" element={<Home/>}/>
       <Route path="/arts" element={<div className='flex flex-wrap -mx-4'>
         {arts.map((art) => (
           <div className="w-full md:w-1/3" key={art.id}>
