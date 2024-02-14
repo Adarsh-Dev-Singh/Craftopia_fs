@@ -28,7 +28,7 @@ const MusicFullDetails = ({ musics }) => {
        <source src={music.urlToAudio} type="audio/mpeg" />
         </audio>
           <br />
-          <h1 style={{fontSize:'1.5em',fontWeight:'bold'}}> Price: Rs {music.price} for the Show</h1>
+          <h1 style={{fontSize:'1.5em',fontWeight:'bold'}}> Price: Rs {music.price} for thehow</h1>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ import PotteryFullDetails from './Components/PotteryFullDetails';
 import './output.css';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import './App.css'
 
 const App = () => {
   const [arts, setArts] = useState([]);
@@ -55,9 +56,9 @@ const App = () => {
     <Navbar/>
    <Routes>
       <Route />
-      <Route path="/arts" element={<div className='flex flex-wrap -mx-4'>
+      <Route path="/arts" element={<div  style={{transition: 'all .3s'}} className='container-x '>
         {arts.map((art) => (
-          <div className="w-full md:w-1/3" key={art.id}>
+          <div style={{margin:'20px '}}  className="" key={art.id}>
             <ArtCards art={art} />
           </div>
         ))}
