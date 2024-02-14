@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="lg:col-span-2">
           <a href="/" className="flex items-center gap-5">
             <img src='https://th.bing.com/th/id/OIP.Vy5PUdCk1nZpeE31MCa1pwHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7' className="h-16 w-16" alt="Craftopia Logo" />
-            <span className="self-center text-2xl md:text-4xl font-bold mb-2 font-[Lemon] border-b-4 border-red-600 p-1">
+            <span className="self-center text-red-200 text-2xl md:text-4xl font-bold mb-2 font-[Lemon] border-b-4 border-red-600 p-1">
               Craftopia
             </span>
           </a>
@@ -64,15 +64,15 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h6 className="font-bold text-black md:text-2xl border-b p-1 mb-1">
+            <h6 className="font-bold md:text-2xl border-b p-1 mb-1">
               Company
             </h6>
             <ul>
-              <li className="py-2 text-lg text-gray-200">About</li>
-              <li className="py-2 text-lg text-gray-200">Blog</li>
-              <li className="py-2 text-lg text-gray-200">Jobs</li>
-              <li className="py-2 text-lg text-gray-200">Press</li>
-              <li className="py-2 text-lg text-gray-200">Team</li>
+              <li className="py-2 text-lg ">About</li>
+              <li className="py-2 text-lg ">Blog</li>
+              <li className="py-2 text-lg ">Jobs</li>
+              <li className="py-2 text-lg ">Press</li>
+              <li className="py-2 text-lg ">Team</li>
             </ul>
           </div>
           <div>
@@ -80,9 +80,9 @@ const Footer = () => {
               Legal
             </h6>
             <ul>
-              <li className="py-2 text-lg text-gray-200">Claim</li>
-              <li className="py-2 text-lg text-gray-200">Policy</li>
-              <li className="py-2 text-lg text-gray-200">Terms</li>
+              <li className="py-2 text-lg">Claim</li>
+              <li className="py-2 text-lg">Policy</li>
+              <li className="py-2 text-lg">Terms</li>
             </ul>
           </div>
         </div>
