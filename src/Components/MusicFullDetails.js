@@ -2,6 +2,7 @@ import {useState} from 'react';
 import { useParams } from 'react-router-dom';
 
 const MusicFullDetails = ({ musics,addToCart  }) => {
+
   const { musicId } = useParams();
   const parsedMusicId = parseInt(musicId);
   const music = musics.find((e) => e.id === parsedMusicId);
@@ -36,9 +37,9 @@ const MusicFullDetails = ({ musics,addToCart  }) => {
           <br />
           <h1 style={{fontSize:'1.5em',fontWeight:'bold'}}> Price: Rs {music.price} for the show</h1>
           {addedToCart ? (
-            <button disabled>Added to Cart</button>
+            <button className='bg-blue-200 hover:bg-blue-200 text-black font-bold py-2 px-4 border border-blue-200 rounded' disabled>Added to Cart</button>
           ) : (
-            <button onClick={handleAddToCart}>Add to Cart</button>
+            <button className='bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 border border-violet-700 rounded' onClick={handleAddToCart}>Add to Cart</button>
           )}
         </div>
       </div>

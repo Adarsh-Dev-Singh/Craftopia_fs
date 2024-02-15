@@ -112,7 +112,7 @@
         </div>} />
         <Route
           path="/arts/:artId"
-          element={<ArtFullDetails arts={arts} />}
+          element={<ArtFullDetails addToCart={addToCart} arts={arts} />}
         />
         <Route />
         <Route />
@@ -125,7 +125,7 @@
         </div>} />
         <Route
           path="/potteries/:potteryId"
-          element={<PotteryFullDetails potteries={potteries} />}
+          element={<PotteryFullDetails potteries={potteries} addToCart={addToCart} />}
         />
         <Route />
         <Route path="/musics" element={<div  style={{margin:'15px',padding:'15px'}} className='flex flex-wrap -mx-4'>
