@@ -2,7 +2,7 @@ import React from 'react'
 // import logo from '../Assets/logo.png'
 import { IoSearch } from "react-icons/io5"
 import { FaCartArrowDown } from "react-icons/fa"
-import { Power1, Power3, gsap } from "gsap";
+import { Power1, gsap } from "gsap";
 import { useLayoutEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 const Navbar = () => {

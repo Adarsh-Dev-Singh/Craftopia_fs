@@ -57,9 +57,9 @@ const App = () => {
    <Routes>
       <Route />
       <Route path="/" element={<Home/>}/>
-      <Route path="/arts" element={<div className='flex flex-wrap -mx-4'>
+      <Route path="/arts" element={<div  style={{margin:'15px',padding:'15px'}} className='flex flex-wrap md:items-center'>
         {arts.map((art) => (
-          <div style={{margin:'20px '}}  className="" key={art.id}>
+          <div className="w-full md:w-1/3" key={art.id}>
             <ArtCards art={art} />
           </div>
         ))}
@@ -70,7 +70,7 @@ const App = () => {
       />
       <Route />
       <Route />
-      <Route path="/potteries" element={<div className='flex flex-wrap -mx-4'>
+      <Route path="/potteries" element={<div  style={{margin:'15px',padding:'15px'}} className='flex flex-wrap -mx-4'>
         {potteries.map((pottery) => (
           <div className="w-full md:w-1/3" key={pottery.id}>
             <PotteryCards pottery={pottery} />
@@ -82,7 +82,7 @@ const App = () => {
         element={<PotteryFullDetails potteries={potteries} />}
       />
       <Route />
-      <Route path="/musics" element={<div className='flex flex-wrap -mx-4'>
+      <Route path="/musics" element={<div  style={{margin:'15px',padding:'15px'}} className='flex flex-wrap -mx-4'>
         {musics.map((music) => (
           <div className="w-full md:w-1/3" key={music.id}>
             <MusicCards music={music} />

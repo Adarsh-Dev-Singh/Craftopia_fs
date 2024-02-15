@@ -1,21 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './ArtCards.css';
 
 const PotteryCards = ({ pottery }) => {
   return (
-    <div >
-      <div  className="max-w-sm rounded overflow-hidden shadow-lg" style={{ margin: '15px', padding: '10px', textAlign: 'center' ,borderRadius:'25px'}}>
-        <img style={{height:'269px',borderRadius:'20px'}} src={pottery.urlToImage} className="w-full" alt={pottery.title} />
-        <div className="px-6 py-4">
-          <h5 className="font-bold text-xl mb-2">{pottery.title}</h5>
-          <p className="text-gray-700 text-base">{pottery.description.slice(0, 80)}...</p>
-          <br/>
-          <Link to={`/potteries/${pottery.id}`}>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View more</button>
-          </Link>  
-        </div>
-      </div>
-    </div>
+    <div className="card">
+<div  className="img-cover"><img src={pottery.urlToImage}/><div  className="icon"><svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 9H22M12 1.5L20.9333 8.2C21.4667 8.6 21.4667 9.4 20.9333 9.8L12 16.5" stroke="black" stroke-width="3"/>
+</svg>
+</div></div>
+
+<div className="desc">
+  <h1>{pottery.title}</h1>
+  <p>{pottery.description.slice(0, 80)}...</p>
+  <Link to={`/potteries/${pottery.id}`}>
+            <button className=" text-white font-bold rounded">More Info<svg width="19" height="14" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></button>
+          </Link>
+</div>
+</div>
   );
 };
 
