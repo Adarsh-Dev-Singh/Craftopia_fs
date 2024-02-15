@@ -1,10 +1,16 @@
-import React from 'react';
+import {useState} from 'react';
 import { useParams } from 'react-router-dom';
 
-const MusicFullDetails = ({ musics }) => {
+const MusicFullDetails = ({ musics,addToCart  }) => {
   const { musicId } = useParams();
   const parsedMusicId = parseInt(musicId);
   const music = musics.find((e) => e.id === parsedMusicId);
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const handleAddToCart = () => {
+    addToCart(music);
+    setAddedToCart(true);
+  };
 
   if (!music) {
     return <div>Music not found</div>;
@@ -28,7 +34,12 @@ const MusicFullDetails = ({ musics }) => {
        <source src={music.urlToAudio} type="audio/mpeg" />
         </audio>
           <br />
-          <h1 style={{fontSize:'1.5em',fontWeight:'bold'}}> Price: Rs {music.price} for thehow</h1>
+          <h1 style={{fontSize:'1.5em',fontWeight:'bold'}}> Price: Rs {music.price} for the show</h1>
+          {addedToCart ? (
+            <button disabled>Added to Cart</button>
+          ) : (
+            <button onClick={handleAddToCart}>Add to Cart</button>
+          )}
         </div>
       </div>
     </div>

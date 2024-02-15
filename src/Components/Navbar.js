@@ -84,9 +84,9 @@ const Navbar = () => {
 
         {/* Cart and Login/Signup Div */}
         <div className="ml-3 flex items-center lg:gap-8">
-          <button>
+          <Link to="/cart">
             <FaCartArrowDown className="w-5 h-5 lg:h-8 lg:w-8" />
-          </button>
+          </Link>
           <button className='text-sm'>Login / Register</button>
         </div>
       </div>

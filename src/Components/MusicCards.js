@@ -5,7 +5,7 @@ import './ArtCards.css';
 const MusicCards = ({ music }) => {
   return (
     <div className="card">
-<div  className="img-cover"><img src={music.urlToImage}/><div  className="icon"><svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div  className="img-cover"><img src={music.urlToImage} alt='music'/><div  className="icon"><svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 9H22M12 1.5L20.9333 8.2C21.4667 8.6 21.4667 9.4 20.9333 9.8L12 16.5" stroke="black" stroke-width="3"/>
 </svg>
 </div></div>
