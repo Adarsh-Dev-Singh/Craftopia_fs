@@ -1,12 +1,32 @@
-import React from 'react'
+import React,{useState , useEffect} from 'react'
 // import logo from '../Assets/logo.png'
+import axios from 'axios'
 import { IoSearch } from "react-icons/io5"
 import { FaCartArrowDown } from "react-icons/fa"
 import { Power1, gsap } from "gsap";
 import { useLayoutEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 const Navbar = () => {
+  const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get('/api/current_user'); // Assuming this endpoint returns the current user's data
+        setUser(response.data.user);
+      } catch (error) {
+        // Handle error
+        console.error('Error fetching user:', error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+  const handleLogout = () => {
+    // Perform logout logic here
+    localStorage.removeItem('token'); // Remove token from localStorage
+    setUser(null); // Clear user state
+  };
   const app = useRef(null);
 
   useLayoutEffect(() => {
@@ -87,7 +107,14 @@ const Navbar = () => {
           <Link to="/cart">
             <FaCartArrowDown className="w-5 h-5 lg:h-8 lg:w-8" />
           </Link>
-          <button className='text-sm'>Login / Register</button>
+          {user ? (
+            <div>
+              <span>Welcome, {user.name}</span>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          ) : (
+            <Link to="/auth" className='text-sm'>Login / Register</Link>
+          )}
         </div>
       </div>
     </nav>

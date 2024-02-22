@@ -12,7 +12,7 @@
   import Footer from './Components/Footer'; 
   import Home from './Components/Home';
   import Cart from './Components/Cart';
-
+  import Auth from './Components/Auth';
   const App = () => {
     const [arts, setArts] = useState([]);
     const [musics, setMusics] = useState([]);
@@ -141,6 +141,9 @@
         />
         <Route path="/cart"
               element={<Cart cart={cart}  removeFromCart={removeFromCart} writeCartToJson={writeCartToJson} />}
+            />
+        <Route path="/auth"
+              element={<Auth />}
             />
       </Routes>
       <Footer/>
