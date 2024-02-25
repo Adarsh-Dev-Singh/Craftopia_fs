@@ -11,6 +11,7 @@ const Cart = () => {
         if (!token) {
           // Handle error: Token not found
           console.error('Token not found in local storage');
+        
           return;
         }
         const response = await axios.get('http://localhost:3000/api/v1/items',

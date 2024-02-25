@@ -19,10 +19,10 @@ const Navbar = () => {
   // Check if user is logged in
   const checkLoggedIn = () => {
     const token = localStorage.getItem('token');
-    const name = localStorage.getItem('name');
-    if (token && name) {
+    const user = localStorage.getItem('user');
+    if (token && user) {
       setIsLoggedIn(true);
-      setUserName(name.name); // Set the username from localStorage
+      setUserName((JSON.parse(user)).name); // Set the username from localStorage
     }
   };
 

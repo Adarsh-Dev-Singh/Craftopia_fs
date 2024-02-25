@@ -29,7 +29,7 @@ const Auth = () => {
       const data = await response.json();
       // Handle successful login
       localStorage.setItem('token', data.token); // Store token in local storage
-      localStorage.setItem('name', JSON.stringify({ name: data.user.name }));
+      localStorage.setItem('user', JSON.stringify({ name: data.user.name }));
       history('/');
     } catch (error) {
       // Handle login error

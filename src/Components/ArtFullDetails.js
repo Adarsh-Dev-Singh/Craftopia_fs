@@ -17,6 +17,7 @@ const ArtFullDetails = ({ arts }) => {
       if (!token) {
         // Handle error: Token not found
         console.error('Token not found in local storage');
+        window.alert('No Token in local storage ');
         return;
       }
 
