@@ -1,63 +1,46 @@
-import React,{useState , useEffect} from 'react'
-// import logo from '../Assets/logo.png'
-import axios from 'axios'
-import { IoSearch } from "react-icons/io5"
-import { FaCartArrowDown } from "react-icons/fa"
-import { Power1, gsap } from "gsap";
-import { useLayoutEffect, useRef } from "react";
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { IoSearch } from "react-icons/io5";
+import { FaCartArrowDown } from "react-icons/fa";
+
 const Navbar = () => {
-  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState('');
+  const history = useNavigate();
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get('/api/current_user'); // Assuming this endpoint returns the current user's data
-        setUser(response.data.user);
-      } catch (error) {
-        // Handle error
-        console.error('Error fetching user:', error);
-      }
-    };
-
-    fetchUser();
-  }, []);
   const handleLogout = () => {
-    // Perform logout logic here
-    localStorage.removeItem('token'); // Remove token from localStorage
-    setUser(null); // Clear user state
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setIsLoggedIn(false);
+    setUserName('');
+    history('/');
   };
-  const app = useRef(null);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.from("#one", 
-      { stagger: .1 ,
-        y:10, 
-        duration: 2 ,
-        ease: Power1,
-        opacity:0
-      })
-      //gsap.to(".square2", { rotate: 360, duration: 5 });
-      //gsap.to(".square3", { rotate: 360, duration: 5 });
-    }, app);
+  // Check if user is logged in
+  const checkLoggedIn = () => {
+    const token = localStorage.getItem('token');
+    const name = localStorage.getItem('name');
+    if (token && name) {
+      setIsLoggedIn(true);
+      setUserName(name.name); // Set the username from localStorage
+    }
+  };
 
-    return () => ctx.revert();
+  // Call checkLoggedIn when component mounts
+  useEffect(() => {
+    checkLoggedIn();
   }, []);
-
 
   return (
-    <nav className="bg-gray-300" ref={app}>
+    <nav className="bg-gray-300">
       <div className="flex items-center justify-between lg:mx-10 p-4" id="one">
-        {/* Logo Name */}
-        <Link href="/" className="flex items-center gap-5">
+        <Link to="/" className="flex items-center gap-5">
           <img src='https://th.bing.com/th/id/OIP.Vy5PUdCk1nZpeE31MCa1pwHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7' className="h-10 w-10 md:h-16 md:w-16" alt="Craftopia Logo" />
           <span className="self-center lg:text-3xl font-bold border-b-4 border-red-600 p-1 font-[Lemon]">
             Craftopia
           </span>
         </Link>
 
-        {/* Nav Menu List */}
         <ul className="hidden md:flex p-2 font-bold lg:text-xl">
           <li>
             <Link
@@ -67,12 +50,14 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <Link
-            to="/arts"
-            className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
-          >
-            Art
-          </Link>
+          <li>
+            <Link
+              to="/arts"
+              className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
+            >
+              Art
+            </Link>
+          </li>
           <li>
             <Link
               to="/musics"
@@ -91,7 +76,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Search Div */}
         <div className="hidden md:flex items-center gap-2">
           <IoSearch className="w-4 h-4 lg:w-8 lg:h-8" />
           <input
@@ -102,18 +86,17 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Cart and Login/Signup Div */}
         <div className="ml-3 flex items-center lg:gap-8">
           <Link to="/cart">
             <FaCartArrowDown className="w-5 h-5 lg:h-8 lg:w-8" />
           </Link>
-          {user ? (
-            <div>
-              <span>Welcome, {user.name}</span>
-              <button onClick={handleLogout}>Logout</button>
-            </div>
+          {isLoggedIn ? (
+            <>
+              <span className='text-lr'>{userName}</span>
+              <button onClick={handleLogout} className='text-md'>Logout</button>
+            </>
           ) : (
-            <Link to="/auth" className='text-sm'>Login / Register</Link>
+            <Link to="/auth" className='text-md'>Login / Register</Link>
           )}
         </div>
       </div>
@@ -121,4 +104,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar
+export default Navbar;

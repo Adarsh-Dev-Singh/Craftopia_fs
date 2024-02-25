@@ -2,7 +2,7 @@
   "status": "ok",
   "Musics": [
     {
-      "id": 1,
+      "id": 11,
       "title": "Classical Music",
       "description": "A timeless form with intricate compositions and orchestral arrangements, classical music spans centuries and features renowned composers like Mozart and Beethoven.",
       "urlToImage": "/Music_img/classical.jpg",
@@ -11,35 +11,35 @@
 
     },
   {
-    "id": 2,
+    "id": 21,
     "title": "Acoustic Music",
     "description": "Acoustic music relies on natural sound amplification without electronic instruments. It often features unplugged performances using acoustic guitars, pianos, or other non-amplified instruments, highlighting a raw and authentic sound.",
     "urlToImage": "https://th.bing.com/th/id/OIP.PQcluVW513rFDa3A25Mn0wHaEK?w=291&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
     "urlToAudio":"/Music/2.mp3","price": "4769"
   },
   {
-    "id": 3,
+    "id": 31,
     "title": "Folk Music",
     "description": "Rooted in regional traditions, folk music tells cultural stories using instruments like guitars and fiddles, showcasing global diversity.",
     "urlToImage": "/Music_img/folk.jpg",
     "urlToAudio":"/Music/3.mp3","price": "5369"
   },
   {
-    "id": 4,
+    "id": 41,
     "title": "Modern Music",
     "description": "Evolving in the 20th and 21st centuries, modern music, including pop, rock, and hip-hop, embraces innovation and reflects contemporary societal themes.",
     "urlToImage": "/Music_img/modern.jpg",
     "urlToAudio":"/Music/4.mp3","price": "4069"
   },
   {
-    "id": 5,
+    "id": 51,
     "title": "Punjabi Music",
     "description": "Dynamic and diverse, city music, like jazz and hip-hop, captures the urban pulse, reflecting the multicultural vibrancy of village punjabi life.",
     "urlToImage": "/Music_img/city.jpg",
     "urlToAudio":"/Music/5.mp3","price": "5969"
   },
   {
-    "id": 6,
+    "id": 61,
     "title": "Traditional Music",
     "description": "Preserving cultural identity, traditional music, passed down through generations, plays a vital role in connecting communities with their heritage.",
     "urlToImage": "https://th.bing.com/th/id/OIP.ymarqpYthVyXQEszOydGUAHaEK?w=260&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",

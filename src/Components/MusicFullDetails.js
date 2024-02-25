@@ -1,46 +1,55 @@
-import {useState} from 'react';
+import React from 'react';
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-const MusicFullDetails = ({ musics,addToCart  }) => {
-
+const MusicFullDetails = ({ musics }) => {
   const { musicId } = useParams();
   const parsedMusicId = parseInt(musicId);
-  const music = musics.find((e) => e.id === parsedMusicId);
-  const [addedToCart, setAddedToCart] = useState(false);
+  const musicItem = musics.find((music) => music.id === parsedMusicId);
 
-  const handleAddToCart = () => {
-    addToCart(music);
-    setAddedToCart(true);
-  };
-
-  if (!music) {
+  if (!musicItem) {
     return <div>Music not found</div>;
   }
 
+  const handleAddToCart = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        // Handle error: Token not found
+        console.error('Token not found in local storage');
+        return;
+      }
+
+      const response = await axios.post('http://localhost:3000/api/v1/items', { ...musicItem }, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      alert('Item added to cart!');
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+    }
+  };
+
   return (
     <div className="container mx-auto p-4">
-      <h1 style={{fontSize:'1.5em',fontWeight:'bold'}} className="my-4 text-center">{music.title}<br /></h1>
+      <h1 style={{ fontSize: '1.5em', fontWeight: 'bold' }} className="my-4 text-center">{musicItem.title}<br /></h1>
       <div className="flex flex-wrap">
         <div className="w-full rounded-sm md:w-8/12 lg:w-8/12 xl:w-8/12 md:pr-4 mb-4">
-          <img style={{borderRadius:'20px'}} className="w-full h-auto" src={music.urlToImage} alt={music.title} />
+          <img style={{ borderRadius: '20px' }} className="w-full h-auto" src={musicItem.urlToImage} alt={musicItem.title} />
         </div>
         <div className="w-full md:w-4/12 lg:w-4/12 xl:w-4/12">
-          <h3 style={{fontSize:'1.3em',fontWeight:'bold'}} className="my-3">Music Description</h3>
-          <p style={{fontSize:'1em',fontStyle:'italic'}}>{music.description}</p>
+          <h3 style={{ fontSize: '1.3em', fontWeight: 'bold' }} className="my-3">Music Description</h3>
+          <p style={{ fontSize: '1em', fontStyle: 'italic' }}>{musicItem.description}</p>
           <br />
-          <p style={{fontSize:'1.5em',fontWeight:'revert'}}>Check the Music : </p>
-
+          <p style={{ fontSize: '1.5em', fontWeight: 'revert' }}>Check the Music : </p>
           <br />
-          <audio controls >
-       <source src={music.urlToAudio} type="audio/mpeg" />
-        </audio>
+          <audio controls>
+            <source src={musicItem.urlToAudio} type="audio/mpeg" />
+          </audio>
           <br />
-          <h1 style={{fontSize:'1.5em',fontWeight:'bold'}}> Price: Rs {music.price} for the show</h1>
-          {addedToCart ? (
-            <button className='bg-blue-200 hover:bg-blue-200 text-black font-bold py-2 px-4 border border-blue-200 rounded' disabled>Added to Cart</button>
-          ) : (
-            <button className='bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 border border-violet-700 rounded' onClick={handleAddToCart}>Add to Cart</button>
-          )}
+          <h1 style={{ fontSize: '1.5em', fontWeight: 'bold' }}> Price: Rs {musicItem.price} for the show</h1>
+          <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
     </div>

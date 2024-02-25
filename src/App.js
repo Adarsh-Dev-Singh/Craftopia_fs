@@ -11,8 +11,8 @@
   import Navbar from './Components/Navbar';
   import Footer from './Components/Footer'; 
   import Home from './Components/Home';
-  import Cart from './Components/Cart';
-  import Auth from './Components/Auth';
+import Auth from './Components/Auth';
+import Cart from './Components/Cart';
   const App = () => {
     const [arts, setArts] = useState([]);
     const [musics, setMusics] = useState([]);
@@ -51,51 +51,7 @@
         .then((data) => setPotteries(data.Pottery))
         .catch((error) => console.error('Error fetching Potteries:', error));
     }, []);
-    const [cart, setCart] = useState([]);
-    const addToCart = (item) => {
-       setCart([...cart, item]);
-      writeCartToJson([...cart, item]);
-    };
-    const fetchCartData = () => {
-      fetch('http://localhost:3001/cartData') // Update URL if needed
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`Failed to fetch cart data (${response.status} ${response.statusText})`);
-          }
-          return response.json();
-        })
-        .then((data) => setCart(data))
-        .catch((error) => console.error('Error fetching cart data:', error));
-    };
-    useEffect(() => {
-      fetchCartData(); 
-    }, []);
-    
-  
-    const removeFromCart = (id) => {
-      const updatedCart = cart.filter(item => item.id !== id);
-      setCart(updatedCart);
-      writeCartToJson(updatedCart);
-    };
 
-    const writeCartToJson = (cartData) => {
-      fetch('http://localhost:3001/writeCartToJson', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(cartData)
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to write cart data to JSON');
-        }
-        console.log('Cart data written to JSON successfully');
-      })
-      .catch(error => {
-        console.error('Error writing cart data to JSON:', error);
-      });
-    };
     
     return (
       <>
@@ -112,7 +68,7 @@
         </div>} />
         <Route
           path="/arts/:artId"
-          element={<ArtFullDetails addToCart={addToCart} arts={arts} />}
+          element={<ArtFullDetails arts={arts} />}
         />
         <Route />
         <Route />
@@ -125,7 +81,7 @@
         </div>} />
         <Route
           path="/potteries/:potteryId"
-          element={<PotteryFullDetails potteries={potteries} addToCart={addToCart} />}
+          element={<PotteryFullDetails potteries={potteries} />}
         />
         <Route />
         <Route path="/musics" element={<div  style={{margin:'15px',padding:'15px'}} className='flex flex-wrap -mx-4'>
@@ -137,14 +93,10 @@
         </div>} />
         <Route
           path="/musics/:musicId"
-          element={<MusicFullDetails musics={musics} addToCart={addToCart}/>}
+          element={<MusicFullDetails musics={musics}/>}
         />
-        <Route path="/cart"
-              element={<Cart cart={cart}  removeFromCart={removeFromCart} writeCartToJson={writeCartToJson} />}
-            />
-        <Route path="/auth"
-              element={<Auth />}
-            />
+        <Route path='/auth' element={<Auth/>}/>
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
       <Footer/>
       </>

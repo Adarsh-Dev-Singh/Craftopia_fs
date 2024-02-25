@@ -1,82 +1,74 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Auth = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [error, setError] = useState('');
-  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+  const [isRegisterMode, setIsRegisterMode] = useState(false);
+  const history = useNavigate();
 
-  const handleAuth = async (e) => {
-    e.preventDefault();
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleLogin = async () => {
     try {
-      let response;
-      if (isLogin) {
-        response = await axios.post('http://localhost:3001/api/v1/auth/login', {
-          email,
-          password
-        });
-      } else {
-        response = await axios.post('http://localhost:3001/api/v1/auth/register', {
-          name,
-          email,
-          password
-        });
-      }
-      const { token, user } = response.data;
-      // Clear any previous error upon successful authentication
-      setError('');
-      // You can handle the token and user data here, such as storing them in localStorage
-      console.log('Authentication Successful:', user);
-      console.log('Token:', token);
+      const response = await fetch('http://localhost:3000/api/v1/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      // Handle successful login
+      localStorage.setItem('token', data.token); // Store token in local storage
+      localStorage.setItem('name', JSON.stringify({ name: data.user.name }));
+      history('/');
     } catch (error) {
-      setError(error.response.data.message || 'An error occurred');
+      // Handle login error
+      console.error('Login error:', error);
     }
   };
 
+  const handleRegister = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/v1/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      // Handle successful registration
+      localStorage.setItem('token', data.token); // Store token in local storage
+      localStorage.setItem('user', JSON.stringify({ name: data.user.name }));
+      history('/');
+    } catch (error) {
+      // Handle registration error
+      console.error('Registration error:', error);
+    }
+  };
+
+  const handleToggleMode = () => {
+    setIsRegisterMode(!isRegisterMode);
+  };
+
   return (
-    <div style={{ textAlign: 'center', maxWidth: '300px', margin: '0 auto' }}>
-      <h2>{isLogin ? 'Login' : 'Register'}</h2>
-      <form onSubmit={handleAuth}>
-        {!isLogin && (
-          <div>
-            <label>Name:</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-        )}
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">{isLogin ? 'Login' : 'Register'}</button>
-      </form>
-      <p
-        style={{ cursor: 'pointer', color: 'blue' }}
-        onClick={() => setIsLogin(!isLogin)}
-      >
-        {isLogin ? 'New user? Register here' : 'Already have an account? Login here'}
-      </p>
+    <div>
+      {isRegisterMode ? <h2>Register</h2> : <h2>Login</h2>}
+      {isRegisterMode && <input type="text" name="name" placeholder="Name" onChange={handleInputChange} />}
+      <input type="email" name="email" placeholder="Email" onChange={handleInputChange} />
+      <input type="password" name="password" placeholder="Password" onChange={handleInputChange} />
+      <button onClick={isRegisterMode ? handleRegister : handleLogin}>{isRegisterMode ? 'Register' : 'Login'}</button>
+      <p onClick={handleToggleMode}>{isRegisterMode ? 'Already have an account? Login' : 'Don\'t have an account? Register'}</p>
     </div>
   );
 };
