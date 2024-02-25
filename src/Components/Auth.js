@@ -62,14 +62,18 @@ const Auth = () => {
   };
 
   return (
-    <div>
+    <>
+    <div style={{ fontFamily:  'Arial, sans-serif', maxWidth: '400px', margin: '0 auto' }}>
+    <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
       {isRegisterMode ? <h2>Register</h2> : <h2>Login</h2>}
-      {isRegisterMode && <input type="text" name="name" placeholder="Name" onChange={handleInputChange} />}
-      <input type="email" name="email" placeholder="Email" onChange={handleInputChange} />
-      <input type="password" name="password" placeholder="Password" onChange={handleInputChange} />
-      <button onClick={isRegisterMode ? handleRegister : handleLogin}>{isRegisterMode ? 'Register' : 'Login'}</button>
-      <p onClick={handleToggleMode}>{isRegisterMode ? 'Already have an account? Login' : 'Don\'t have an account? Register'}</p>
+      {isRegisterMode && <input type="text" name="name" placeholder="Name" onChange={handleInputChange} style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ced4da' }} />}
+      <input type="email" name="email" placeholder="Email" onChange={handleInputChange} style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ced4da' }} />
+      <input type="password" name="password" placeholder="Password" onChange={handleInputChange} style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ced4da' }} />
+      <button onClick={isRegisterMode ? handleRegister : handleLogin} style={{ width: '100%', padding: '10px', borderRadius: '5px', border: 'none', background: '#007bff', color: '#fff', cursor: 'pointer' }}>{isRegisterMode ? 'Register' : 'Login'}</button>
+      <p onClick={handleToggleMode} style={{ textAlign: 'center', marginTop: '10px', cursor: 'pointer', color: '#007bff' }}>{isRegisterMode ? 'Already have an account? Login' : 'Don\'t have an account? Register'}</p>
     </div>
+  </div>
+    </>
   );
 };
 

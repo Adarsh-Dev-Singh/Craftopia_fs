@@ -10,11 +10,11 @@ const ArtCards = ({ art }) => {
 </svg>
 </div></div>
 
-<div className="desc">
+<div className=" desc">
   <h1>{art.title}</h1>
   <p>{art.description.slice(0, 80)}...</p>
-  <Link to={`/arts/${art.id}`}>
-            <button className=" text-white font-bold rounded">More Info<svg width="19" height="14" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></button>
+  <Link className='bg-zinc-900' to={`/arts/${art.id}`}>
+            <button className="  text-white font-bold rounded">More Info<svg width="19" height="14" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></button>
           </Link>
 </div>
 </div>

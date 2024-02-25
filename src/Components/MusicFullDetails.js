@@ -50,7 +50,8 @@ const MusicFullDetails = ({ musics }) => {
           </audio>
           <br />
           <h1 style={{ fontSize: '1.5em', fontWeight: 'bold' }}> Price: Rs {musicItem.price} for the show</h1>
-          <button onClick={handleAddToCart}>Add to Cart</button>
+          <br />
+          <button class="bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded" onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
     </div>

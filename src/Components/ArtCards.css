@@ -82,7 +82,7 @@ body {
 
 .desc a{
   text-decoration: none;
-  background-color: dodgerblue;
+  background-color: rgb(29, 24, 41);
   padding: 15px 25px;
   color:white;
   border-radius: 15px;
@@ -91,7 +91,7 @@ body {
   transition: all .2s;
 }
 .desc a:hover{
-  background-color: SteelBlue;
+  background-color: rgb(43, 35, 104);
 }
 .desc a:hover svg{
   animation : iconjln 1s;
