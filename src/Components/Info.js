@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const Info = () => {
   return (
     // More Information
     <div className="m-10 my-[120px]">
-      <div className="flex sm:flex-row flex-col flex-wrap  justify-evenly items-center gap-[100px]">
+      <div className="flex sm:flex-row flex-col flex-wrap justify-evenly items-center gap-[100px]">
         {/* First  */}
 
         <div className="flex flex-col items-center gap-8">
@@ -17,7 +17,7 @@ const Info = () => {
             className="w-20 h-20 relative"
             preserveAspectRatio="none"
           >
-            <path
+           <path
               opacity="0.3"
               d="M80 40C80 62.0914 62.0914 80 40 80C17.9086 80 0 62.0914 0 40C0 17.9086 17.9086 0 40 0C62.0914 0 80 17.9086 80 40ZM10.9071 40C10.9071 56.0675 23.9325 69.0929 40 69.0929C56.0675 69.0929 69.0929 56.0675 69.0929 40C69.0929 23.9325 56.0675 10.9071 40 10.9071C23.9325 10.9071 10.9071 23.9325 10.9071 40Z"
               fill="#2F2E30"
@@ -176,7 +176,7 @@ const Info = () => {
             className="  w-20 h-20 relative"
             preserveAspectRatio="none"
           >
-            <path
+           <path
               opacity="0.3"
               d="M80 40C80 62.0914 62.0914 80 40 80C17.9086 80 0 62.0914 0 40C0 17.9086 17.9086 0 40 0C62.0914 0 80 17.9086 80 40ZM10.9071 40C10.9071 56.0675 23.9325 69.0929 40 69.0929C56.0675 69.0929 69.0929 56.0675 69.0929 40C69.0929 23.9325 56.0675 10.9071 40 10.9071C23.9325 10.9071 10.9071 23.9325 10.9071 40Z"
               fill="#2F2E30"
@@ -205,6 +205,6 @@ const Info = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Info
+export default Info;
