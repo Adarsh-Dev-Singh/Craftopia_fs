@@ -35,8 +35,8 @@ const Navbar = () => {
     <nav className="bg-gray-300">
       <div className="flex items-center justify-between lg:mx-10 p-4" id="one">
         <Link to="/" className="flex items-center gap-5">
-          <img src='https://th.bing.com/th/id/OIP.Vy5PUdCk1nZpeE31MCa1pwHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7' className="h-10 w-10 md:h-16 md:w-16" alt="Craftopia Logo" />
-          <span className="self-center lg:text-3xl font-bold border-b-4 border-red-600 p-1 font-[Lemon]">
+          <img src='/icon.png ' className="h-10 w-10 md:h-16 md:w-16" alt="Craftopia Logo" />
+          <span className="self-center lg:text-3xl font-bold p-1 font-[Lemon]">
             Craftopia
           </span>
         </Link>
