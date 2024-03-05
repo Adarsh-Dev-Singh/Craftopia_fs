@@ -43,7 +43,7 @@ const ExplorePhone = () => {
             "The soulful strains of the shehnai weave a tapestry of cultural
               richness and emotive melody."
             </p>
-            <Link to='/arts'  className="rounded bg-white w-[80%] p-2 font-mono">
+            <Link to='/musics'  className="rounded bg-white w-[80%] p-2 font-mono">
               Explore Art Now !
             </Link>
           </div>
@@ -60,7 +60,7 @@ const ExplorePhone = () => {
             "Unearth the beauty of Indian clay artistry. Our creations embody
               tradition and innovation."
             </p>
-            <Link to='/arts'  className="rounded bg-white w-[80%] p-2 font-mono">
+            <Link to='/potteries'  className="rounded bg-white w-[80%] p-2 font-mono">
               Explore Art Now !
             </Link>
           </div>

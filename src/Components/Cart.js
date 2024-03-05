@@ -126,11 +126,17 @@ const Cart = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container flex flex-row mx-auto p-4">
       <h2>Shopping Cart</h2>
       <ul>
+        <div className='flex p-5 justify-center text-2xl italic '>
+          <pre className='bg-purple-60'>
+        Total Price: Rs {totalPrice}  </pre>
+        <br />
+      <button className="flex justify-center p-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handlePlaceOrder}>Place Order</button> 
+        </div>
         {cartItems.map((item) => (
-          <li className='flex' key={item.id}>
+          <li className='flex ' key={item.id}>
             <div className="grid items-center gap-x-8 gap-y-2 grid-cols-3">
               <img style={{ borderRadius: '150px' }} className="object-scale-down h-48 w-96 my-2 " src={item.urlToImage} alt={item.title} />
               <div>
@@ -139,13 +145,11 @@ const Cart = () => {
                 <br />
                 <button className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleRemoveItem(item._id)}>Remove</button>
               </div>
-            </div>
+        </div>
           </li>
         ))}
       </ul>
-      <p>Total Price: Rs {totalPrice}</p>
-      <button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handlePlaceOrder}>Place Order</button>
-    </div>
+      </div>
   );
 };
 

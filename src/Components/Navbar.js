@@ -37,7 +37,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-gray-300 relative">
+    <nav className="bg-gray-900 text-white relative">
     <div className="flex items-center justify-between lg:mx-10 p-4">
       <div className="flex items-center gap-5">
         <Link to="/" className="flex items-center gap-5">
@@ -93,7 +93,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/"
-            className="block px-3 text-gray-900 hover:bg-transparent hover:text-blue-700 font-[Salsa]"
+            className="block px-3 text-white hover:bg-transparent hover:text-blue-700 font-[Salsa]"
           >
             Home
           </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/arts"
-            className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
+            className="block px-3 text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
           >
             Art
           </Link>
@@ -109,7 +109,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/musics"
-            className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
+            className="block px-3 text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
           >
             Music
           </Link>
@@ -117,7 +117,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/potteries"
-            className="block px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
+            className="block px-3 text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 font-[Salsa]"
           >
             Pottery
           </Link>

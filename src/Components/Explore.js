@@ -3,6 +3,7 @@ import product1 from '../Assets/product1.jpg'
 import product2 from '../Assets/product2.png'
 import product3 from '../Assets/product3.jpg'
 import product4 from '../Assets/product4.jpg'
+import { Link } from 'react-router-dom'
 
 const Explore = () => {
 
@@ -37,9 +38,9 @@ const Explore = () => {
               eco-friendly creations. Each product brings a touch of the natural
               world into your everyday life."
             </p>
-            <button className="rounded bg-white w-[30%] p-2 font-mono">
+            <Link to='/arts' className="rounded bg-white w-[30%] p-2 font-mono">
               Explore Art Now !
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -56,9 +57,9 @@ const Explore = () => {
               "The soulful strains of the shehnai weave a tapestry of cultural
               richness and emotive melody."
             </p>
-            <button className="rounded bg-white w-[60%] p-3 font-mono">
-              Explore Music Now !
-            </button>
+            <Link to='/musics' className="rounded bg-white w-[30%] p-2 font-mono">
+              Explore Art Now !
+            </Link>
           </div>
         </div>
 
@@ -76,9 +77,9 @@ const Explore = () => {
               tradition and innovation, shaping earth into timeless expressions
               of cultural richness."
             </p>
-            <button className="rounded bg-white w-[35%] p-2 font-mono">
-              Explore Pottery Now !
-            </button>
+            <Link to='/potteries' className="rounded bg-white w-[30%] p-2 font-mono">
+              Explore Art Now !
+            </Link>
           </div>
         </div>
 
@@ -95,9 +96,9 @@ const Explore = () => {
               Every sheet of paper becomes a canvas for the soulful expressions
               of Indian craftsmanship.
             </p>
-            <button className="rounded bg-white w-[60%] p-3 font-mono">
-              Explore Music Now !
-            </button>
+            <Link to='/arts' className="rounded bg-white w-[30%] p-2 font-mono">
+              Explore Art Now !
+            </Link>
           </div>
         </div>
 
