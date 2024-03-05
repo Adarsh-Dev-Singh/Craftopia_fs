@@ -5,7 +5,6 @@ import product3 from '../Assets/product3.jpg'
 import product4 from '../Assets/product4.jpg'
 
 const Explore = () => {
-  
 
   return (
     <div className=" mx-10 mt-20 pt-10 h-[1600px]">
