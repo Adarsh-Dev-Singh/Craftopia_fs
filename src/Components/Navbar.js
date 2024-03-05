@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="flex items-center gap-5">
         <Link to="/" className="flex items-center gap-5">
           <img src='/icon.png ' className="h-10 w-10 md:h-16 md:w-16" alt="Craftopia Logo" />
-          <span className="self-center lg:text-3xl font-bold p-1 font-[Lemon]">
+          <span className="self-center italic lg:text-3xl font-bold p-1 font-[Lemon]">
             Craftopia
           </span>
         </Link>
@@ -138,7 +138,7 @@ const Navbar = () => {
       {/* Cart and Authentication */}
       <div className="ml-3 flex items-center lg:gap-8">
         <Link to="/cart">
-          <FaCartArrowDown className="w-5 h-5 lg:h-8 lg:w-8" />
+          <FaCartArrowDown className="w-5 h-5 lg:h-9 lg:w-8" />
         </Link>
         {isLoggedIn ? (
           <>
@@ -146,13 +146,13 @@ const Navbar = () => {
             <button onClick={handleLogout} className='text-md'>Logout</button>
           </>
         ) : (
-          <Link to="/auth" className='text-md'>Login / Register</Link>
+          <Link  to="/auth" className='text-md px-3'>Login / Register</Link>
         )}
       </div>
 
       {/* Mobile Menu Toggle Button */}
       <div className="md:hidden">
-        <button onClick={toggleMobileMenu} className="text-gray-900 focus:outline-none">
+        <button onClick={toggleMobileMenu} className="text-gray-100 focus:outline-none">
           {showMobileMenu ? (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
