@@ -6,12 +6,12 @@ import Explore from './Explore'
 import ExplorePhone from './ExplorePhone';
 
 const Home = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isDestop, setIsDestop] = useState(false);
 
   useEffect(() => {
    
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 900);
+      setIsDestop(window.innerWidth >= 768);
     };
 
     handleResize();
@@ -22,8 +22,8 @@ const Home = () => {
 
   return (
     <div>
-      {!isMobile && <DesktopComponent />}
-      {isMobile && <MobileComponent />}
+      {isDestop && <DesktopComponent />}
+      {!isDestop && <MobileComponent />}
     </div>
   );
 };
