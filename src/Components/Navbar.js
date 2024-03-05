@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="flex items-center gap-5">
         <Link to="/" className="flex items-center gap-5">
           <img src='/icon.png ' className="h-10 w-10 md:h-16 md:w-16" alt="Craftopia Logo" />
-          <span className="self-center italic lg:text-3xl font-bold p-1 font-[Lemon]">
+          <span className="self-center px-2 italic lg:text-3xl font-bold p-1 font-[Lemon]">
             Craftopia
           </span>
         </Link>
@@ -142,8 +142,8 @@ const Navbar = () => {
         </Link>
         {isLoggedIn ? (
           <>
-            <span className='text-lr'>{userName}</span>
-            <button onClick={handleLogout} className='text-md'>Logout</button>
+            <span className='text-lr px-2'>{userName}</span>
+            <button onClick={handleLogout} className='text-md  px-2'>Logout</button>
           </>
         ) : (
           <Link  to="/auth" className='text-md px-3'>Login / Register</Link>
