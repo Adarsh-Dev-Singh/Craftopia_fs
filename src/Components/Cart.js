@@ -128,15 +128,15 @@ const Cart = () => {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-3xl font-semibold mb-4">Shopping Cart</h2>
-      <div className="flex justify-between items-center mb-4">
-        <div className="text-lg font-semibold">Total Price: Rs {totalPrice}</div>
-      </div>
+      <div className="flex justify-between items-start mb-4 ">
+        <div className="text-lg font-semibold px-4 mx-3">Total Price: Rs {totalPrice}</div>
         <button className="bg-gray-800 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded" onClick={handlePlaceOrder}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
           Place Order
         </button>
+      </div>
       <ul className="space-y-4">
         {cartItems.map((item) => (
           <li key={item.id} className="flex items-center border-b pb-2">
