@@ -126,30 +126,30 @@ const Cart = () => {
   };
 
   return (
-    <div className="container flex flex-row mx-auto p-4">
-      <h2>Shopping Cart</h2>
-      <ul>
-        <div className='flex p-5 justify-center text-2xl italic '>
-          <pre className='bg-purple-60'>
-        Total Price: Rs {totalPrice}  </pre>
-        <br />
-      <button className="flex justify-center p-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handlePlaceOrder}>Place Order</button> 
-        </div>
+    <div className="container mx-auto p-4">
+      <h2 className="text-3xl font-semibold mb-4">Shopping Cart</h2>
+      <div className="flex justify-between items-center mb-4">
+        <div className="text-lg font-semibold">Total Price: Rs {totalPrice}</div>
+      </div>
+        <button className="bg-gray-800 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded" onClick={handlePlaceOrder}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+          Place Order
+        </button>
+      <ul className="space-y-4">
         {cartItems.map((item) => (
-          <li className='flex ' key={item.id}>
-            <div className="grid items-center gap-x-8 gap-y-2 grid-cols-3">
-              <img style={{ borderRadius: '150px' }} className="object-scale-down h-48 w-96 my-2 " src={item.urlToImage} alt={item.title} />
-              <div>
-                <b>{item.title}</b> - <i>Rs {item.price} only</i>
-                <br />
-                <br />
-                <button className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleRemoveItem(item._id)}>Remove</button>
-              </div>
-        </div>
+          <li key={item.id} className="flex items-center border-b pb-2">
+            <img className="w-20 h-20 rounded-full mr-4" src={item.urlToImage} alt={item.title} />
+            <div className="flex-grow">
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-gray-600">Price: Rs {item.price}</p>
+            </div>
+            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded" onClick={() => handleRemoveItem(item._id)}>Remove</button>
           </li>
         ))}
       </ul>
-      </div>
+    </div>
   );
 };
 

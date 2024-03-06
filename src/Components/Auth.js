@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Auth = () => {
   const [formData, setFormData] = useState({
@@ -19,14 +20,8 @@ const Auth = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('https://craftopianewbackend.up.railway.app/api/v1/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
+      const response = await axios.post('https://craftopianewbackend.up.railway.app/api/v1/auth/login', formData);
+      const data = response.data;
       // Handle successful login
       localStorage.setItem('token', data.token); // Store token in local storage
       localStorage.setItem('user', JSON.stringify({ name: data.user.name }));
@@ -39,14 +34,8 @@ const Auth = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await fetch('https://craftopianewbackend.up.railway.app/api/v1/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
+      const response = await axios.post('https://craftopianewbackend.up.railway.app/api/v1/auth/register', formData);
+      const data = response.data;
       // Handle successful registration
       localStorage.setItem('token', data.token); // Store token in local storage
       localStorage.setItem('user', JSON.stringify({ name: data.user.name }));
