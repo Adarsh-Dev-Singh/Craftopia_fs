@@ -11,7 +11,7 @@ import { FaRegCopyright } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-[#404040] py-16 px-8 mt-[100px]">
+    <div className=" bg-[#404040] py-16 px-8 mt-[100px]">
       <div className="grid lg:grid-cols-4 gap-[0px]">
         <div className="lg:col-span-2">
           <a href="/" className="flex items-center gap-5">
@@ -68,11 +68,11 @@ const Footer = () => {
               Company
             </h6>
             <ul>
-              <li className="py-2 text-lg ">About</li>
-              <li className="py-2 text-lg ">Blog</li>
-              <li className="py-2 text-lg ">Jobs</li>
-              <li className="py-2 text-lg ">Press</li>
-              <li className="py-2 text-lg ">Team</li>
+              <li className="py-2 text-lg text-gray-200">About</li>
+              <li className="py-2 text-lg text-gray-200">Blog</li>
+              <li className="py-2 text-lg text-gray-200">Jobs</li>
+              <li className="py-2 text-lg text-gray-200">Press</li>
+              <li className="py-2 text-lg text-gray-200">Team</li>
             </ul>
           </div>
           <div>
@@ -80,9 +80,9 @@ const Footer = () => {
               Legal
             </h6>
             <ul>
-              <li className="py-2 text-lg">Claim</li>
-              <li className="py-2 text-lg">Policy</li>
-              <li className="py-2 text-lg">Terms</li>
+              <li className="py-2 text-lg text-gray-200">Claim</li>
+              <li className="py-2 text-lg text-gray-200">Policy</li>
+              <li className="py-2 text-lg text-gray-200">Terms</li>
             </ul>
           </div>
         </div>
