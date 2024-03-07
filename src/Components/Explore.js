@@ -58,7 +58,7 @@ const Explore = () => {
               richness and emotive melody."
             </p>
             <Link to='/musics' className="rounded bg-white w-[30%] p-2 font-mono">
-              Explore Art Now !
+              Explore Music Now !
             </Link>
           </div>
         </div>
@@ -78,7 +78,7 @@ const Explore = () => {
               of cultural richness."
             </p>
             <Link to='/potteries' className="rounded bg-white w-[30%] p-2 font-mono">
-              Explore Art Now !
+              Explore Pottery Now !
             </Link>
           </div>
         </div>

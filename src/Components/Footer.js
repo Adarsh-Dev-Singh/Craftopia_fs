@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="grid lg:grid-cols-4 gap-[0px]">
         <div className="lg:col-span-2">
           <a href="/" className="flex items-center gap-5">
-            <img src='https://th.bing.com/th/id/OIP.Vy5PUdCk1nZpeE31MCa1pwHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7' className="h-16 w-16" alt="Craftopia Logo" />
+            <img src='/icon.png' className="h-16 w-16" alt="Craftopia Logo" />
             <span className="self-center text-red-200 text-2xl md:text-4xl font-bold mb-2 font-[Lemon] border-b-4 border-red-600 p-1">
               Craftopia
             </span>
