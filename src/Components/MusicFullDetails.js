@@ -21,7 +21,7 @@ const MusicFullDetails = ({ musics }) => {
         return;
       }
 
-      await axios.post('http://localhost:3000/api/v1/items', { ...musicItem }, {
+      await axios.post('https://craftopianewbackend-production.up.railway.app/api/v1/items', { ...musicItem }, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

@@ -23,22 +23,22 @@ const Gallery = ({ sli_de }) => {
       <div className="slider-container relative z-0  p-5 m-5">
         <Slider {...settings}>
           <div>
-            <img src="https://free4kwallpapers.com/uploads/wallpaper-cache/multicolored-abstract-painting-wallpaper-400x270-MM-100.jpg" alt="" />
+            <img height={1} src="https://wallpapers.com/images/high/madara-against-ninja-army-2wjklr38u8tkc219.webp" alt="" />
           </div>
           <div>
-            <img src="https://free4kwallpapers.com/uploads/wallpaper-cache/red-mountains-wallpaper-400x270-MM-100.jpg" alt="" />
+            <img height={1}  src="https://wallpapers.com/images/high/grunge-madara-artwork-2sbm4ejwcjtb8fl6.webp" alt="" />
           </div>
           <div>
-            <img src="https://free4kwallpapers.com/uploads/wallpaper-cache/abstract-art-wallpaper-400x270-MM-100.jpg" alt="" />
+            <img height={1} src="https://wallpapers.com/images/high/minimalist-madara-rinnegan-eye-ka7da7jjcsg5nkwk.webp" alt="" />
           </div>
           <div>
-            <img src="https://free4kwallpapers.com/uploads/wallpaper-cache/-anime-painting-art-wallpaper-400x270-MM-100.jpg" alt="" />
+            <img height={1} src="https://wallpapers.com/images/high/madara-and-kunai-weapon-20vmkvy8r03ydia8.webp" alt="" />
           </div>
           <div>
-            <img src="https://free4kwallpapers.com/uploads/wallpaper-cache/music-man-stingray-bass-4-string-sunburst-wallpaper-400x270-MM-100.jpg" alt="" />
+            <img height={1} src="https://wallpapers.com/images/high/madara-at-winter-j7l4t2bim0nudhdp.webp" alt="" />
           </div>
           <div>
-            <img src="https://free4kwallpapers.com/uploads/wallpaper-cache/alia-bhatt-singer-wallpaper-400x270-MM-100.jpg" alt="" />
+            <img height={1}  src="https://wallpapers.com/images/hd/hashirama-and-madara-battle-p0g2e8eimzrutgrn.webp" alt="" />
           </div>
         </Slider>
       </div>
