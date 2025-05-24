@@ -21,7 +21,7 @@ const ArtFullDetails = ({ arts }) => {
         return;
       }
 
-      await axios.post('https://craftopianewbackend.up.railway.app/api/v1/items', { ...art }, {
+      await axios.post('http://localhost:3000/api/v1/items', { ...art }, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

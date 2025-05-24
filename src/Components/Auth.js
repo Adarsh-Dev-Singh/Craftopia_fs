@@ -20,7 +20,7 @@ const Auth = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://craftopianewbackend.up.railway.app/api/v1/auth/login', formData);
+      const response = await axios.post('http://localhost:3000/api/v1/auth/login', formData);
       const data = response.data;
       // Handle successful login
       localStorage.setItem('token', data.token); // Store token in local storage
@@ -34,7 +34,7 @@ const Auth = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('https://craftopianewbackend.up.railway.app/api/v1/auth/register', formData);
+      const response = await axios.post('http://localhost:3000/api/v1/auth/register', formData);
       const data = response.data;
       // Handle successful registration
       localStorage.setItem('token', data.token); // Store token in local storage

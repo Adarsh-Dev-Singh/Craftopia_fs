@@ -23,7 +23,7 @@ const Cart = () => {
     }
 
     try {
-      const response = await axios.post("https://craftopianewbackend.up.railway.app/api/v1/order", {
+      const response = await axios.post("http://localhost:3000/api/v1/order", {
         amount: totalPrice * 100, // Amount is in paisa
         currency: "INR",
         receipt: "qwsaq1",
@@ -37,7 +37,7 @@ const Cart = () => {
       console.log(order);
 
       const options = {
-        key: "rzp_test_Oa95jLPD02g5KJ", // Replace with your Razorpay key
+        key: "rzp_test_DI7GVPEmrU50Ik", // Replace with your Razorpay key
         amount: totalPrice * 100, // Amount is in paisa
         currency: "INR",
         name: "Acme Corp", // Replace with your business name
@@ -50,7 +50,7 @@ const Cart = () => {
           };
 
           const validateRes = await axios.post(
-            "https://craftopianewbackend.up.railway.app/api/v1/order/validate",
+            "http://localhost:3000/api/v1/order/validate",
             body,
             {
               headers: {
@@ -89,7 +89,7 @@ const Cart = () => {
           console.error('Token not found in local storage');
           return;
         }
-        const response = await axios.get('https://craftopianewbackend.up.railway.app/api/v1/items', {
+        const response = await axios.get('http://localhost:3000/api/v1/items', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -112,7 +112,7 @@ const Cart = () => {
         console.error('Token not found in local storage');
         return;
       }
-      await axios.delete(`https://craftopianewbackend.up.railway.app/api/v1/items/${id}`, {
+      await axios.delete(`http://localhost:3000/api/v1/items/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
